@@ -1,0 +1,49 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+
+const menuitems = [
+  {
+    title: "Features",
+    path: "#",
+    children: [
+      { title: "Action", path: "#" },
+      { title: "Another action", path: "#" },
+      { title: "Dropdown Submenu", path: "#" },
+    ],
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+];
+---
+
+<Container>
+  <header
+    class="flex items-center justify-center"
+    x-data="{ open: false }"
+    x-init="$watch('open', value => console.log(value))"
+  >
+    <div class="flex items-center justify-between text-5xl pt-11">
+      <a href="/" class=""
+        ><span class="font-bold text-rose-400">Nermals</span><span
+          class="text-white">Tools</span
+        >
+      </a>
+    </div>
+  </header>
+</Container>
